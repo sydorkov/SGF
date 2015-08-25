@@ -79,10 +79,13 @@ Sydorkov &amp; Garbovskiy LESS Framework
   - none
 
 - Paddings
-  - *
+  - 0 - 20 (paddign: {{.}}px;) **.p-Param**
+  - 0 - 20 (paddign: {{.}}px {{.}}px;) **.p-Param1-Param2**
 
 - Margins
-  - *
+  - auto (left, right)
+  - 0 - 100   (inc: 5)
+  - 100 - 400 (inc: 20)
 	
 - Text-align
   - left
@@ -91,7 +94,7 @@ Sydorkov &amp; Garbovskiy LESS Framework
   - justify
 	
 - Font-weight
-  - *
+  - 100 - 900
 
 - Font-size
   - *px
