@@ -16,7 +16,9 @@ Sydorkov &amp; Garbovskiy LESS Framework
 
 ## @mediaSize префиксы
 Вариант 1: sm-md-lg (small, medium, large)
+
 Вариант 2: m-t-d (mobile, tablet, desktop)
+
 Вариант 3: и sm-md-lg, и m-t-d
 
 ## Примеры по синтаксису
