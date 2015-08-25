@@ -1,7 +1,8 @@
 # SGF
 Sydorkov &amp; Garbovskiy LESS Framework
 
-# Синтаксис
+## Синтаксис
+```
 .name {} 	  	    	 // @name: string
 .nameProp {} 	 	    // @name: string, @Prop: integer
 .name-Prop1-Prop2 {}   // @name: string, @Prop1, @Prop2: integer
@@ -11,13 +12,15 @@ Sydorkov &amp; Garbovskiy LESS Framework
 .mediaSize-nameProp {} 	 	    // @mediaSize: string, @name: string, @Prop: integer
 .mediaSize-name-Prop1-Prop2 {} // @mediaSize: string, @name: string, @Prop1, @Prop2: integer
 .name-mediaSize-Prop {} 	  // @mediaSize: string, @name: string, @Prop: integer
+```
 
-# @mediaSize префиксы
+## @mediaSize префиксы
 Вариант 1: sm-md-lg (small, medium, large)
 Вариант 2: m-t-d (mobile, tablet, desktop)
 Вариант 3: и sm-md-lg, и m-t-d
 
-# Примеры по синтаксису
+## Примеры по синтаксису
+```
 .text-left {
 	text-align: left;
 }
@@ -43,86 +46,86 @@ Sydorkov &amp; Garbovskiy LESS Framework
 .lg-w-50 {
 	width: 50%;
 }
+```
 
+## Основные правила
+- Overflow:
+  - hidden
+  - scroll
+  - scroll-x
+  - scroll-y
+	
+- Box-sizing
+  - border-box
+  - content-box
 
-# Основные правила
-Overflow:
-	hidden
-	scroll
-	scroll-x
-	scroll-y
+- Images
+  - img-response (alias: img-responsive)
 	
-Box-sizing
-	border-box
-	content-box
+- Displays
+  - block
+  - inline-block
+  - table
+  - none
+	
+- Vertical-aligns
+  - mid
+  - top
+  - bot
+	
+- Floats
+  - left
+  - right
+  - none
 
-Images
-	img-response (alias: img-responsive)
-	
-Displays
-	block
-	inline-block
-	table
-	none
-	
-Vertical-aligns
-	mid
-	top
-	bot
-	
-Floats
-	left
-	right
-	none
+- Paddings
+  - *
 
-Paddings
-	*
+- Margins
+  - *
+	
+- Text-align
+  - left
+  - right
+  - center
+  - justify
+	
+- Font-weight
+  - *
 
-Margins
-	*
+- Font-size
+  - *px
+  - *vw
 	
-Text-align
-	left
-	right
-	center
-	justify
+- Line-heights
+  - 0.75
+  - 1.0
+  - 1.25
+  - 1.5
 	
-Font-weight
-	*
+- Text-decorations
+  - none
+  - underline
+  - bordered bottom (solid/dashed)
 
-Font-size
-	*px
-	*vw
+- Text-transforms
+  - none
+  - uppercase
+  - cap
 	
-Line-heights
-	0.75
-	1.0
-	1.25
-	1.5
+- Positions
+  - relative
+  - absolute
+  - static
+  - fixed
 	
-Text-decorations
-	none
-	underline
-	bordered bottom (solid/dashed)
-
-Text-transforms
-	none
-	uppercase
-	cap
+- Cursors
+  - default
+  - pointer
 	
-Positions
-	relative
-	absolute
-	static
-	fixed
+- User-select
+  - none
+  - text
 	
-Cursors
-	default
-	pointer
-	
-User-select
-	none
-	text
-	
-Widths
-	0%-100%
+- Widths
+  - 0%-100%
