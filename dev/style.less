@@ -1,0 +1,298 @@
+@import "../SGF";
+
+@desktopMax: @desktopMaximumWidth;
+@desktop: (@tabletMaximumWidth + 1);
+@tabletMax: @tabletMaximumWidth;
+@tabletMin: (@mobileMaximumWidth + 1);
+@mobile: @mobileMaximumWidth;
+
+.container-full() {
+  width: 100%;
+}
+
+.over-hidden {
+  overflow: hidden;
+}
+.orver-scroll {
+  overflow: scroll;
+}
+
+.bs-bb {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.bs-cb {
+  -webkit-box-sizing: content-box;
+  -moz-box-sizing: content-box;
+  box-sizing: content-box;
+}
+
+.pos-rel {
+  position: relative;
+}
+
+.pos-abs {
+  position: absolute;
+}
+
+.img-response, .img-responsive {
+  max-width: 100%;
+  height: auto;
+}
+
+.vam {
+  vertical-align: middle;
+}
+
+.vat {
+  vertical-align: top;
+}
+
+.vab {
+  vertical-align: bottom;
+}
+
+.pull-left {
+  float: left;
+}
+
+.pull-right {
+  float: right;
+}
+
+.pull-none {
+  float: none;
+}
+
+.lh-1 {
+  line-height: 1;
+}
+
+.lh-1-5 {
+  line-height: 1.5;
+}
+
+.tdn {
+  text-decoration: none;
+}
+
+.tdu {
+  text-decoration: underline;
+}
+
+.ttu {
+  text-transform: uppercase;
+}
+
+.cur-po {
+  cursor: pointer;
+}
+
+.cur-def {
+  cursor: default;
+}
+
+.usn {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.hide() {
+  display: none;
+}
+
+.db() {
+  display: block;
+}
+
+.dt() {
+  display: table;
+}
+
+.dib() {
+  display: inline-block;
+}
+
+.text-left() {
+  text-align: left;
+}
+
+.text-right() {
+  text-align: right;
+}
+
+.text-center() {
+  text-align: center;
+}
+
+.fw-bold() {
+  font-weight: 700;
+}
+.fw-semi-bold() {
+  font-weight: 500;
+}
+.fw-normal() {
+  font-weight: 400;
+}
+.fw-light() {
+  font-weight: 300;
+}
+
+.m-auto() {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.generate-columns(@n, @size: ~'', @i: 1) when (@i =< @n) {
+  .w-@{size}@{i} {
+    width: @i * 1%;
+  }
+  .generate-columns(@n, @size, (@i + 1));
+}
+
+.generate-margins(@size: ~'', @n: 50, @i: 5) when (@i =< @n) {
+  .mtop-@{size}@{i} {
+    margin-top: @i * 1px;
+  }
+  .mbot-@{size}@{i} {
+    margin-bottom: @i * 1px;
+  }
+  .ml-@{size}@{i} {
+    margin-left: @i * 1px;
+  }
+  .mr-@{size}@{i} {
+    margin-right: @i * 1px;
+  }
+
+  .generate-margins(@size, @n, (@i + 5));
+}
+
+.generate-defaults(@size: ~'') {
+  .container-@{size}full {
+    .container-full();
+  }
+
+  body .@{size}hide {
+    .hide();
+  }
+
+  body .@{size}db {
+    .db();
+  }
+
+  body .@{size}dt {
+    .dt();
+  }
+
+  body .@{size}dib {
+    .dib();
+  }
+
+  body .@{size}text-left {
+    .text-left();
+  }
+
+  body .@{size}text-right {
+    .text-right();
+  }
+
+  body .@{size}text-center {
+    .text-center();
+  }
+
+  body .@{size}fw-bold {
+    .fw-bold();
+  }
+  body .@{size}fw-normal {
+    .fw-normal();
+  }
+  body .@{size}fw-light {
+    .fw-light();
+  }
+
+  body .@{size}m-auto {
+    .m-auto();
+  }
+
+  .generate-margins(@size);
+}
+
+.generate-columns(100);
+.generate-defaults();
+
+@media (min-width: @desktop) {
+  @sizeName: lg-;
+
+  .lg-container,
+  .container-md-full,
+  .container {
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    min-width: @desktop;
+    max-width: @desktopMax;
+  }
+  [class^=".w-sm"],
+  [class^=".w-md"] {
+    width: 100%;
+  }
+  .generate-columns(100, @sizeName);
+  .generate-defaults(@sizeName);
+}
+
+@media (min-width: @tabletMin) and (max-width: @tabletMax) {
+  @sizeName: md-;
+  .container-lg-full,
+  .container {
+    margin: auto;
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 100%;
+    min-width: @mobile;
+    max-width: @tabletMax;
+  }
+  .container-md-full {
+    width: 100%;
+  }
+  [class^=".w-lg"],
+  [class^=".w-sm"] {
+    width: 100%;
+  }
+  .generate-columns(100, @sizeName);
+  .generate-defaults(@sizeName);
+}
+
+@media (max-width: @mobile) {
+  @sizeName: sm-;
+  .container-lg-full,
+  .container-md-full,
+  .container {
+    margin: auto;
+    width: 100%;
+    max-width: @tabletMax;
+  }
+  .generate-columns(100, @sizeName);
+  .generate-defaults(@sizeName);
+}
+
+.lg(@attr, @prop) {
+  @media (min-width: @desktop) {
+      @{attr}: @prop;
+  }
+}
+
+.md(@attr, @prop) {
+  @media (min-width: @tabletMin) and (max-width: @tabletMax) {
+      @{attr}: @prop;
+  }
+}
+
+.sm(@attr, @prop) {
+  @media (max-width: @mobile) {
+      @{attr}: @prop;
+  }
+}

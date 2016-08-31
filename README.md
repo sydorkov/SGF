@@ -1,5 +1,5 @@
 # SGF
-Sydorkov &amp; Garbovskiy LESS Framework
+Sidorkov &amp; Garbovskiy LESS Framework
 
 ## Синтаксис
 ```
@@ -54,8 +54,6 @@ Sydorkov &amp; Garbovskiy LESS Framework
 - Overflow:
   - hidden
   - scroll
-  - scroll-x
-  - scroll-y
 	
 - Box-sizing
   - border-box
@@ -80,43 +78,28 @@ Sydorkov &amp; Garbovskiy LESS Framework
   - right
   - none
 
-- Paddings
-  - 0 - 20 (paddign: {{.}}px;) **.p-Param**
-  - 0 - 20 (paddign: {{.}}px {{.}}px;) **.p-Param1-Param2**
-
 - Margins
   - auto (left, right)
-  - 0 - 100   (inc: 5)
-  - 100 - 400 (inc: 20)
+  - 0 - 50   (inc: 5)
 	
 - Text-align
   - left
   - right
   - center
-  - justify
 	
 - Font-weight
   - 100 - 900
 
-- Font-size
-  - *px
-  - *vw
-	
 - Line-heights
-  - 0.75
   - 1.0
-  - 1.25
   - 1.5
 	
 - Text-decorations
   - none
   - underline
-  - bordered bottom (solid/dashed)
 
 - Text-transforms
-  - none
   - uppercase
-  - cap
 	
 - Positions
   - relative
